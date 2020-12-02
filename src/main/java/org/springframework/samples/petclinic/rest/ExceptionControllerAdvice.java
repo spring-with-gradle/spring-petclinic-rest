@@ -45,8 +45,10 @@ public class ExceptionControllerAdvice {
 	}
 	
 	private class ErrorInfo {
-	    public final String className;
-	    public final String exMessage;
+	    @SuppressWarnings("unused")
+		public final String className;
+	    @SuppressWarnings("unused")
+		public final String exMessage;
 
 	    public ErrorInfo(Exception ex) {
 	        this.className = ex.getClass().getName();
