@@ -24,6 +24,7 @@ import org.springframework.samples.petclinic.model.PetType;
 import org.springframework.samples.petclinic.model.Specialty;
 import org.springframework.samples.petclinic.model.Vet;
 import org.springframework.samples.petclinic.model.Visit;
+import org.springframework.samples.petclinic.rest.Product;
 
 
 /**
@@ -67,5 +68,7 @@ public interface ClinicService {
 	Collection<Specialty> findAllSpecialties() throws DataAccessException;
 	void saveSpecialty(Specialty specialty) throws DataAccessException;
 	void deleteSpecialty(Specialty specialty) throws DataAccessException;
+	
+	Collection<Product> findAllProducts();
 
 }

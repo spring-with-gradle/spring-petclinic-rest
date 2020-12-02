@@ -34,6 +34,7 @@ import org.springframework.samples.petclinic.repository.PetTypeRepository;
 import org.springframework.samples.petclinic.repository.SpecialtyRepository;
 import org.springframework.samples.petclinic.repository.VetRepository;
 import org.springframework.samples.petclinic.repository.VisitRepository;
+import org.springframework.samples.petclinic.rest.Product;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -54,6 +55,9 @@ public class ClinicServiceImpl implements ClinicService {
     private VisitRepository visitRepository;
     private SpecialtyRepository specialtyRepository;
 	private PetTypeRepository petTypeRepository;
+	
+	// TODO implement DATA, JPA, JDBC!!!
+	private ProductRepository productRepository;
 
     @Autowired
      public ClinicServiceImpl(
@@ -283,6 +287,12 @@ public class ClinicServiceImpl implements ClinicService {
 	@Transactional(readOnly = true)
 	public Collection<Visit> findVisitsByPetId(int petId) {
 		return visitRepository.findByPetId(petId);
+	}
+
+	@Override
+	@Transactional(readOnly = true)	
+	public Collection<Product> findAllProducts() throws DataAccessException {
+		return productRepository.findAll();
 	}
 	
 	
