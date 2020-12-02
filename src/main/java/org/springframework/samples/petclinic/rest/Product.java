@@ -1,6 +1,13 @@
 package org.springframework.samples.petclinic.rest;
 
-public class Product {
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import org.springframework.samples.petclinic.model.BaseEntity;
+
+@Entity
+@Table(name = "products")
+public class Product extends BaseEntity {
 
 	private String description;
 	

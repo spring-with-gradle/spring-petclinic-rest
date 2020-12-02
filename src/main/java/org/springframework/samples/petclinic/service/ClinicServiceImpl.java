@@ -55,8 +55,6 @@ public class ClinicServiceImpl implements ClinicService {
     private VisitRepository visitRepository;
     private SpecialtyRepository specialtyRepository;
 	private PetTypeRepository petTypeRepository;
-	
-	// TODO implement DATA, JPA, JDBC!!!
 	private ProductRepository productRepository;
 
     @Autowired
@@ -66,13 +64,16 @@ public class ClinicServiceImpl implements ClinicService {
     		 OwnerRepository ownerRepository,
     		 VisitRepository visitRepository,
     		 SpecialtyRepository specialtyRepository,
-			 PetTypeRepository petTypeRepository) {
+			 PetTypeRepository petTypeRepository,
+			 ProductRepository productRepository
+    		 ) {
         this.petRepository = petRepository;
         this.vetRepository = vetRepository;
         this.ownerRepository = ownerRepository;
         this.visitRepository = visitRepository;
         this.specialtyRepository = specialtyRepository; 
 		this.petTypeRepository = petTypeRepository;
+		this.productRepository = productRepository;
     }
 
 	@Override
@@ -294,8 +295,6 @@ public class ClinicServiceImpl implements ClinicService {
 	public Collection<Product> findAllProducts() throws DataAccessException {
 		return productRepository.findAll();
 	}
-	
-	
 
 
 }
