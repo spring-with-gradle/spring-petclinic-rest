@@ -1,4 +1,4 @@
-package org.springframework.samples.petclinic.service;
+package org.springframework.samples.petclinic.repository;
 
 import java.util.Collection;
 

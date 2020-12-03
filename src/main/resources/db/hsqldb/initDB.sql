@@ -7,6 +7,7 @@ DROP TABLE types IF EXISTS;
 DROP TABLE owners IF EXISTS;
 DROP TABLE roles IF EXISTS;
 DROP TABLE users IF EXISTS;
+DROP TABLE products IF EXISTS;
 
 
 CREATE TABLE vets (
@@ -34,6 +35,13 @@ CREATE TABLE types (
   name VARCHAR(80)
 );
 CREATE INDEX types_name ON types (name);
+
+
+CREATE TABLE products (
+  id   INTEGER IDENTITY PRIMARY KEY,
+  description VARCHAR(80)
+);
+
 
 CREATE TABLE owners (
   id         INTEGER IDENTITY PRIMARY KEY,
