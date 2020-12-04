@@ -5,8 +5,11 @@ INSERT INTO vets VALUES (4, 'Rafael', 'Ortega');
 INSERT INTO vets VALUES (5, 'Henry', 'Stevens');
 INSERT INTO vets VALUES (6, 'Sharon', 'Jenkins');
 
-INSERT INTO products VALUES (1, 'Ração Whiskas Carne para Gatos Adultos');
-INSERT INTO products VALUES (2, 'Ração Seca Nutrilus Pro Frango & Carne para Cães Adultos');
+INSERT INTO brands VALUES (1, 'Whiskas Brand');
+
+
+INSERT INTO products VALUES (1, 1, 'Ração Whiskas Carne para Gatos Adultos');
+INSERT INTO products VALUES (2, 1, 'Ração Seca Nutrilus Pro Frango & Carne para Cães Adultos');
 
 INSERT INTO specialties VALUES (1, 'radiology');
 INSERT INTO specialties VALUES (2, 'surgery');

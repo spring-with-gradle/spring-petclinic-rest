@@ -8,7 +8,7 @@ DROP TABLE owners IF EXISTS;
 DROP TABLE roles IF EXISTS;
 DROP TABLE users IF EXISTS;
 DROP TABLE products IF EXISTS;
-
+DROP TABLE brands IF EXISTS;
 
 CREATE TABLE vets (
   id         INTEGER IDENTITY PRIMARY KEY,
@@ -36,11 +36,18 @@ CREATE TABLE types (
 );
 CREATE INDEX types_name ON types (name);
 
+CREATE TABLE brands (
+  id   INTEGER IDENTITY PRIMARY KEY,
+  name VARCHAR(80)
+);
 
 CREATE TABLE products (
   id   INTEGER IDENTITY PRIMARY KEY,
+  brand_id    INTEGER NOT NULL,  
   description VARCHAR(80)
 );
+ALTER TABLE products ADD CONSTRAINT fk_products_brands FOREIGN KEY (brand_id) REFERENCES brands (id);
+
 
 
 CREATE TABLE owners (

@@ -7,8 +7,8 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.dao.DataAccessException;
+import org.springframework.samples.petclinic.model.Product;
 import org.springframework.samples.petclinic.repository.ProductRepository;
-import org.springframework.samples.petclinic.rest.Product;
 import org.springframework.stereotype.Repository;
 
 @Repository
