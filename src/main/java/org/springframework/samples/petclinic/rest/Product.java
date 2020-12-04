@@ -10,11 +10,6 @@ import org.springframework.samples.petclinic.model.BaseEntity;
 public class Product extends BaseEntity {
 
 	private String description;
-	
-	Product(String description) {
-		super();
-		this.description = description;
-	}
 
 	public String getDescription() {
 		return description;

@@ -45,8 +45,13 @@ public class ProductRestControllerTests {
 				.setControllerAdvice(new ExceptionControllerAdvice()).build();
 
 		products = new ArrayList<>();
-		products.add(new Product("A"));
-		products.add(new Product("B"));
+		
+		Product p1 = new Product();
+		p1.setDescription("A");
+		products.add(p1);
+		Product p2 = new Product();
+		p2.setDescription("B");
+		products.add(p2);
 	}
 
 	@Test

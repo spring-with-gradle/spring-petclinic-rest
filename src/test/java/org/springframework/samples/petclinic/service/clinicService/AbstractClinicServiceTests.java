@@ -28,6 +28,7 @@ import org.springframework.samples.petclinic.model.PetType;
 import org.springframework.samples.petclinic.model.Specialty;
 import org.springframework.samples.petclinic.model.Vet;
 import org.springframework.samples.petclinic.model.Visit;
+import org.springframework.samples.petclinic.rest.Product;
 import org.springframework.samples.petclinic.service.ClinicService;
 import org.springframework.samples.petclinic.util.EntityUtils;
 import org.springframework.test.context.ContextConfiguration;
@@ -475,5 +476,13 @@ public abstract class AbstractClinicServiceTests {
         assertThat(specialty).isNull();
     }
 
+    @Test
+    public void shouldFindAllProducts(){
+        Collection<Product> petTypes = this.clinicService.findAllProducts();
+        Product product1 = EntityUtils.getById(petTypes, Product.class, 1);
+        assertThat(product1.getDescription()).isEqualTo("Ração Whiskas Carne para Gatos Adultos");
+        Product product2 = EntityUtils.getById(petTypes, Product.class, 2);
+        assertThat(product2.getDescription()).isEqualTo("Ração Seca Nutrilus Pro Frango & Carne para Cães Adultos");
+    }    
 
 }
